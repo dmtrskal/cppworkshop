@@ -25,6 +25,13 @@ std::vector<T> generate_geometric_samples(std::size_t sample_number,
                                           T common_ratio) {
   static_assert(std::is_arithmetic<T>::value, "not arithmetic type");
   std::vector<T> v(sample_number);
+  
+  T n{1};
+  std::generate (std::begin(v), std::end(v), [&n, common_ratio]() {
+    n = n*common_ratio;
+    return n;
+  } );
+  
   return v;
 }
 
@@ -37,6 +44,8 @@ std::vector<T> generate_geometric_samples(std::size_t sample_number,
 ///
 bool is_divisible_by(std::vector<unsigned long> &v, unsigned long d) {
   bool result = false;
+  //if ( std::all_of(std::begin(v), std::end(v), [](int i){return i%d;}) )
+  //  result=true;  
   return result;
 }
 

@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/ubuntu/workspace/build/src",
+  "command": "/usr/bin/g++-5     -std=c++14 -O2 -Wall -Werror -g -g -g -fsanitize=address -fuse-ld=gold -fno-omit-frame-pointer -fno-optimize-sibling-calls -fstack-protector-strong -D_FORTIFY_SOURCE=2 -I/home/ubuntu/workspace/include    -o CMakeFiles/auto.dir/auto.cpp.o -c /home/ubuntu/workspace/src/auto.cpp",
+  "file": "/home/ubuntu/workspace/src/auto.cpp"
+},
+{
+  "directory": "/home/ubuntu/workspace/build/src",
+  "command": "/usr/bin/g++-5     -std=c++14 -O2 -Wall -Werror -g -g -g -fsanitize=address -fuse-ld=gold -fno-omit-frame-pointer -fno-optimize-sibling-calls -fstack-protector-strong -D_FORTIFY_SOURCE=2 -I/home/ubuntu/workspace/include    -o CMakeFiles/memerr.dir/memerr.cpp.o -c /home/ubuntu/workspace/src/memerr.cpp",
+  "file": "/home/ubuntu/workspace/src/memerr.cpp"
+},
+{
+  "directory": "/home/ubuntu/workspace/build/src",
+  "command": "/usr/bin/g++-5     -std=c++14 -O2 -Wall -Werror -g -g -g -fsanitize=address -fuse-ld=gold -fno-omit-frame-pointer -fno-optimize-sibling-calls -fstack-protector-strong -D_FORTIFY_SOURCE=2 -I/home/ubuntu/workspace/include    -o CMakeFiles/move.dir/move.cpp.o -c /home/ubuntu/workspace/src/move.cpp",
+  "file": "/home/ubuntu/workspace/src/move.cpp"
+},
+{
+  "directory": "/home/ubuntu/workspace/build/src",
+  "command": "/usr/bin/g++-5     -std=c++14 -O2 -Wall -Werror -g -g -g -fsanitize=address -fuse-ld=gold -fno-omit-frame-pointer -fno-optimize-sibling-calls -fstack-protector-strong -D_FORTIFY_SOURCE=2 -I/home/ubuntu/workspace/include    -o CMakeFiles/raii.dir/raii.cpp.o -c /home/ubuntu/workspace/src/raii.cpp",
+  "file": "/home/ubuntu/workspace/src/raii.cpp"
+},
+{
+  "directory": "/home/ubuntu/workspace/build/src",
+  "command": "/usr/bin/g++-5     -std=c++14 -O2 -Wall -Werror -g -g -g -fsanitize=address -fuse-ld=gold -fno-omit-frame-pointer -fno-optimize-sibling-calls -fstack-protector-strong -D_FORTIFY_SOURCE=2 -I/home/ubuntu/workspace/include    -o CMakeFiles/stl.dir/stl.cpp.o -c /home/ubuntu/workspace/src/stl.cpp",
+  "file": "/home/ubuntu/workspace/src/stl.cpp"
+},
+{
+  "directory": "/home/ubuntu/workspace/build/src",
+  "command": "/usr/bin/g++-5     -std=c++14 -O2 -Wall -Werror -g -g -g -fsanitize=address -fuse-ld=gold -fno-omit-frame-pointer -fno-optimize-sibling-calls -fstack-protector-strong -D_FORTIFY_SOURCE=2 -I/home/ubuntu/workspace/include    -o CMakeFiles/thread.dir/thread.cpp.o -c /home/ubuntu/workspace/src/thread.cpp",
+  "file": "/home/ubuntu/workspace/src/thread.cpp"
+}
+]
