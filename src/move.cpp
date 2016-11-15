@@ -21,13 +21,13 @@ class Buffer
 {
  public:
   Buffer(T value = T{}) { data_.fill(value); }
-  Buffer(const Buffer& a)
+  Buffer(const Buffer& a)     //copy constructor
       : data_{a.data_} { ++copies; }
-  Buffer(Buffer&& a)
+  Buffer(Buffer&& a)        //move constructor-> pairnei rvalue reference Buffer&&
       : data_{std::move(a.data_)} { ++moves; }
   Buffer& operator=(const Buffer& a) = delete; // disable copy assignment
   Buffer& operator=(Buffer&& a) = delete; // disable move assignment
-  T& operator[](std::size_t pos) { return data_[pos]; }
+  T& operator[](std::size_t pos) { return data_[pos]; } 
   const T& operator[](std::size_t pos) const { return data_[pos]; }
   constexpr std::size_t size() const { return data_.size(); }
   static std::size_t copies; ///< total copy operations of Buffer instances
@@ -59,7 +59,7 @@ class File
   File(T value = T{}) : buf_{value} {}
   File(const std::string& path)
   {
-    std::ifstream ifs{path};
+    std::ifstream ifs{path};    //input file stream!!!
     if (ifs.is_open() == false)
       throw std::runtime_error{"cannot open file"};
     ifs >> std::noskipws;
@@ -68,6 +68,8 @@ class File
   }
   File(const File& f)
       : size_{f.size_}, buf_{f.buf_} {}
+  File(File&& f)   //move constructor-> ADDITION
+      : size_{f.size_}, buf_{std::move(f.buf_)} {f.size_=0;}
   T& operator[](std::size_t pos) { return buf_[pos]; }
   const T& operator[](std::size_t pos) const { return buf_[pos]; }
   std::size_t size() const { return size_; }

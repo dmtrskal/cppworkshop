@@ -58,8 +58,9 @@ std::unordered_set<int> port_scan(const std::set<int>& server_ports)
   std::unordered_set<int> active_ports; ///< active server ports
   for (auto sport : server_ports) {
     const int cport = net::client_port();
-    if (net::bind(cport) == false)
-      continue;
+    if (net::bind(cport) == false) {
+        continue;
+    }
     if (net::connect(sport) == false) {
       net::close(cport);
       continue;
@@ -67,6 +68,7 @@ std::unordered_set<int> port_scan(const std::set<int>& server_ports)
     net::Message req;
     if (net::send(&req) == false) {
       net::close(sport);
+      net::close(cport);  //ADDITION
       continue;
     }
     net::Message* resp{nullptr};
@@ -82,6 +84,7 @@ std::unordered_set<int> port_scan(const std::set<int>& server_ports)
       if (net::send(&req) == false || net::recv(resp) == false) {
         net::close(sport);
         net::close(cport);
+        delete resp;
         continue;
       }
       active_ports.insert(sport);
